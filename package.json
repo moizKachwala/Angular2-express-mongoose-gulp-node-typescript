@@ -4,8 +4,11 @@
   "description": "Angular2 Gulp Typescript and Express",
   "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "gulp build"
+    "clean": "gulp clean",
+    "compile": "gulp compile",
+    "build": "gulp build",
+    "start": "concurrent --kill-others \"gulp watch\" \"lite-server\"",
+    "postinstall": "typings install"
   },
   "keywords": [],
   "author": "Moiz Kachwala <moizk@hotmail.com>",
@@ -25,8 +28,10 @@
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
+    "gulp-tslint": "^4.3.3",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.13.6",
-    "run-sequence": "^1.2.1"
+    "run-sequence": "^1.2.1",
+    "tslint": "^3.5.0"
   }
 }
