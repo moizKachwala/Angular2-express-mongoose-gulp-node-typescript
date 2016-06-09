@@ -1,5 +1,5 @@
 {
-  "name": "angular2-express-mongo",
+  "name": "angular2-express",
   "version": "1.0.0",
   "description": "Angular2 Gulp Typescript and Express",
   "main": "dist/server.js",
@@ -10,7 +10,7 @@
     "start": "concurrent --kill-others \"gulp watch\" \"gulp start\"",
     "postinstall": "gulp installTypings"
   },
-  "keywords": [],
+  "keywords": ["Angular2", "Express", "Quick Start", "Gulp", "Typescript"],
   "author": "Moiz Kachwala <moizk@hotmail.com>",
   "license": "MIT",
   "dependencies": {
