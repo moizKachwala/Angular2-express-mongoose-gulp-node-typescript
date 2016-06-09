@@ -7,7 +7,7 @@
     "clean": "gulp clean",
     "compile": "gulp compile",
     "build": "gulp build",
-    "start": "concurrent --kill-others \"gulp watch\" \"lite-server\"",
+    "start": "concurrent --kill-others \"gulp watch\" \"gulp start\"",
     "postinstall": "typings install"
   },
   "keywords": [],
@@ -25,11 +25,13 @@
     "zone": "^0.3.4"
   },
   "devDependencies": {
+    "concurrently": "^2.1.0",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
-    "gulp-tslint": "^4.3.3",
+    "gulp-nodemon": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^4.3.3",
     "gulp-typescript": "^2.13.6",
     "run-sequence": "^1.2.1",
     "tslint": "^3.5.0"

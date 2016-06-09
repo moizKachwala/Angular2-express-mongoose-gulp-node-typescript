@@ -13,6 +13,7 @@ const tsProject = tsc.createProject("tsconfig.json");
 const tslint = require('gulp-tslint');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
+var nodemon = require('gulp-nodemon');
 
 /**
  * Remove build directory.
@@ -49,6 +50,16 @@ gulp.task('tslint', () => {
     return gulp.src("client/app/**/*.ts")
         .pipe(tslint())
         .pipe(tslint.report('prose'));
+});
+
+gulp.task('start', function () {
+    nodemon({ script: 'build/server.js'
+        , ext: 'html js'
+        , ignore: ['ignored.js']
+        , tasks: ['lint'] })
+        .on('restart', function () {
+            console.log('restarted!')
+        });
 });
 
 /**
