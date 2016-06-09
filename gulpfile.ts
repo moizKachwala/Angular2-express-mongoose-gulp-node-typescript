@@ -46,7 +46,7 @@ gulp.task('build:client', function(){
  * Lint all custom TypeScript files.
  */
 gulp.task('tslint', () => {
-    return gulp.src("client/**/*.ts")
+    return gulp.src("client/app/**/*.ts")
         .pipe(tslint())
         .pipe(tslint.report('prose'));
 });
