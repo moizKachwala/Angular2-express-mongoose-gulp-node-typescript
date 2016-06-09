@@ -14,6 +14,7 @@ const tslint = require('gulp-tslint');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
 var nodemon = require('gulp-nodemon');
+var gulpTypings = require("gulp-typings");
 
 /**
  * Remove build directory.
@@ -106,6 +107,15 @@ gulp.task('watch', function () {
     gulp.watch(["client/**/*.html", "client/**/*.css"], ['resources']).on('change', function (e) {
         console.log('Resource file ' + e.path + ' has been changed. Updating.');
     });
+});
+
+/**
+ * Install typings for server and client.
+ */
+gulp.task("installTypings",function(){
+    var stream = gulp.src(["./server/typings.json","./client/typings.json"])
+        .pipe(gulpTypings(null)); //will install all typingsfiles in pipeline.
+    return stream; // by returning stream gulp can listen to events from the stream and knows when it is finished.
 });
 
 /**

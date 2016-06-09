@@ -8,7 +8,7 @@
     "compile": "gulp compile",
     "build": "gulp build",
     "start": "concurrent --kill-others \"gulp watch\" \"gulp start\"",
-    "postinstall": "typings install"
+    "postinstall": "gulp installTypings"
   },
   "keywords": [],
   "author": "Moiz Kachwala <moizk@hotmail.com>",
@@ -33,6 +33,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tslint": "^4.3.3",
     "gulp-typescript": "^2.13.6",
+    "gulp-typings": "^2.0.0",
     "run-sequence": "^1.2.1",
     "tslint": "^3.5.0"
   }
