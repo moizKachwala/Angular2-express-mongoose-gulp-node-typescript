@@ -20,7 +20,7 @@ const gulp = require("gulp"),
  * Remove build directory.
  */
 gulp.task('clean', (cb) => {
-    return del(["build"], cb);
+    return del(["dist"], cb);
 });
 
 /**
@@ -28,13 +28,12 @@ gulp.task('clean', (cb) => {
  */
 gulp.task('build:server', function () {
     var tsProject = tsc.createProject('server/tsconfig.json');
-    var tsResult = gulp.src('server/**/*.ts')
+    var tsResult = gulp.src('server/src/**/*.ts')
         .pipe(sourcemaps.init())
         .pipe(tsc(tsProject))
     return tsResult.js
-        .pipe(concat('server.js'))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('dist/server'))
 });
 
 gulp.task('build:client', function(){
@@ -44,7 +43,7 @@ gulp.task('build:client', function(){
         .pipe(tsc(tsProject))
     return tsResult.js
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('dist/client'))
 });
 
 /**
@@ -66,15 +65,15 @@ gulp.task("compile", ["tslint"], () => {
         .pipe(tsc(tsProject));
     return tsResult.js
         .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest("build"));
+        .pipe(gulp.dest("dist/client"));
 });
 
 /**
- * Copy all resources that are not TypeScript files into build directory.
+ * Copy all resources that are not TypeScript files into build directory. e.g. index.html, css, images
  */
-gulp.task("resources", () => {
-    return gulp.src(["client/**/*", "!**/*.ts"])
-        .pipe(gulp.dest("build"));
+gulp.task("clientResources", () => {
+    return gulp.src(["client/**/*", "!**/*.ts","!client/typings", "!client/typings/**","!client/*.json"])
+        .pipe(gulp.dest("dist/client"));
 });
 
 /**
@@ -88,7 +87,7 @@ gulp.task("libs", () => {
         'angular2/bundles/angular2.dev.js',
         'angular2/bundles/router.dev.js'
     ], {cwd: "node_modules/**"}) /* Glob required here. */
-        .pipe(gulp.dest("build/libs"));
+        .pipe(gulp.dest("dist/client/libs"));
 });
 
 /**
@@ -116,7 +115,7 @@ gulp.task("installTypings",function(){
  * Start the express server with nodemon
  */
 gulp.task('start', function () {
-    nodemon({ script: 'build/server.js'
+    nodemon({ script: 'dist/server/server.js'
         , ext: 'html js'
         , ignore: ['ignored.js']
         , tasks: ['tslint'] })
@@ -135,5 +134,5 @@ gulp.task('start', function () {
  */
 
 gulp.task("build", function (callback) {
-    runSequence('clean', 'build:server', 'build:client', 'resources', 'libs', callback);
+    runSequence('clean', 'build:server', 'build:client', 'clientResources', 'libs', callback);
 });
