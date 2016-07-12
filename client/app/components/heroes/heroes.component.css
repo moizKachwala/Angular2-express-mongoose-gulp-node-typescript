@@ -6,7 +6,7 @@
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
-    width: 15em;
+    width: 25em;
 }
 .heroes li {
     cursor: pointer;
@@ -44,4 +44,25 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+}
+
+.buttonCls {
+    margin-top: 20px;
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer; cursor: hand;
+}
+
+.error {color:red;}
+
+button.delete-button{
+    float:right;
+    background-color: red !important;
+    color:white;
+    margin-right: 5px;
+    border-radius: 4px;
+    cursor: pointer; cursor: hand;
 }

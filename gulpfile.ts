@@ -85,7 +85,8 @@ gulp.task("libs", () => {
         'systemjs/dist/system.src.js',
         'rxjs/bundles/Rx.js',
         'angular2/bundles/angular2.dev.js',
-        'angular2/bundles/router.dev.js'
+        'angular2/bundles/router.dev.js',
+        'angular2/bundles/http.dev.js',
     ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("dist/client/libs"));
 });
@@ -97,7 +98,7 @@ gulp.task('watch', function () {
     gulp.watch(["client/**/*.ts"], ['compile']).on('change', function (e) {
         console.log('TypeScript file ' + e.path + ' has been changed. Compiling.');
     });
-    gulp.watch(["client/**/*.html", "client/**/*.css"], ['resources']).on('change', function (e) {
+    gulp.watch(["client/**/*.html", "client/**/*.css"], ['clientResources']).on('change', function (e) {
         console.log('Resource file ' + e.path + ' has been changed. Updating.');
     });
 });

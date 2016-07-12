@@ -2,7 +2,7 @@
  * Created by Moiz.Kachwala on 02-06-2016.
  */
 
-import {Component, Input} from 'angular2/core';
+import {Component, Input, OnInit} from 'angular2/core';
 import {Hero} from "../../models/hero";
 import { RouteParams } from 'angular2/router';
 import {HeroService} from "../../services/hero.service";
@@ -13,8 +13,13 @@ import {HeroService} from "../../services/hero.service";
     styleUrls:['./app/components/heroDetail/hero-detail.component.css']
 })
 
-export class HeroDetailComponent {
+export class HeroDetailComponent implements OnInit {
     hero: Hero;
+    @Input() hero: Hero;
+    newHero = false;
+    error: any;
+    navigated = false; // true if navigated here
+
 
     constructor(
         private heroService: HeroService,
@@ -22,9 +27,25 @@ export class HeroDetailComponent {
     }
 
     ngOnInit() {
-        let id = +this.routeParams.get('id');
-        this.heroService.getHero(id)
-            .then(hero => this.hero = hero);
+        let id = this.routeParams.get('id');
+        if (id === 'new') {
+            this.newHero = true;
+            this.hero = new Hero();
+        }else {
+            this.newHero = false;
+            this.heroService.getHero(id)
+                .then(hero => this.hero = hero);
+        }
+    }
+
+    save() {
+        this.heroService
+            .save(this.hero)
+            .then(hero => {
+                this.hero = hero; // saved hero, w/ id if new
+                this.goBack();
+            })
+            .catch(error => this.error = error); // TODO: Display error message
     }
 
     goBack() {

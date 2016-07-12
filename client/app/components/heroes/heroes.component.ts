@@ -19,6 +19,8 @@ export class HeroesComponent implements OnInit {
 
     heroes: Hero[];
     selectedHero: Hero;
+    error: any;
+
     constructor(
         private router: Router,
         private heroService: HeroService) { }
@@ -31,6 +33,22 @@ export class HeroesComponent implements OnInit {
     onSelect(hero: Hero) { this.selectedHero = hero; }
 
     gotoDetail() {
-        this.router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
+        this.router.navigate(['HeroDetail', { id: this.selectedHero._id }]);
+    }
+
+    addHero() {
+        this.selectedHero = null;
+        this.router.navigate(['HeroDetail', { id: 'new' }]);
+    }
+
+    deleteHero(hero: Hero, event: any) {
+        event.stopPropagation();
+        this.heroService
+            .delete(hero)
+            .then(res => {
+                this.heroes = this.heroes.filter(h => h !== hero);
+                if (this.selectedHero === hero) { this.selectedHero = null; }
+            })
+            .catch(error => this.error = error);
     }
 }

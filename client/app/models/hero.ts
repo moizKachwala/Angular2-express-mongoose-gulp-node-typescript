@@ -3,6 +3,8 @@
  */
 
 export class Hero {
-    id: number;
+    _id: string;
+    power: string;
+    amountPeopleSaved: number;
     name: string;
 }
