@@ -12,6 +12,85 @@ It also uses Gulp for copying our resources.
     npm start
 ```
 
+## Directory Structure
+
+```
+angular2-MEAN
+      |-- node_modules
+      |-- client
+           |-- app
+                |-- Components
+                        |-- dashboard
+                                |-- dashboard.component.css
+                                |-- dashboard.component.html
+                                |-- dashboard.component.ts
+						|-- heroDetail
+								|-- hero-detail.component.css
+								|-- hero-detail.component.html
+								|-- hero-detail.component.ts
+						|-- heroes
+								|-- heroes.component.css
+								|-- heroes.component.html
+								|-- heroes.component.ts
+                |-- models
+						|-- hero.ts
+				|-- services
+						|-- hero.service.ts
+				|-- app.component.css
+				|-- app.component.ts
+				|-- app.html
+				|-- main.ts
+           |-- typings
+           |-- index.html
+           |-- tsconfig.json
+           |-- typings.json
+      |-- server
+		   |-- src
+				|-- app
+					 |-- business
+							|-- common
+								  |-- Read.ts
+								  |-- Write.ts
+							|-- interfaces
+								  |-- HeroBusiness.ts
+							|-- BaseBusiness.ts
+							|-- HeroBusiness.ts
+					 |-- dataAccess
+							|-- Schemas
+								   |-- HeroSchema.ts
+							|-- DataAcccess.ts
+					 |-- model
+						   |-- interfaces
+									|-- HeroModel.ts
+						   |-- HeroModel.ts
+					 |-- repository
+							|-- interfaces
+									|-- Read.ts
+									|-- Write.ts
+							|-- BaseRepository.ts
+							|-- HeroRepository.ts
+				|-- config
+					   |-- constants
+								|-- constants.ts
+					   |-- routes
+							  |-- HeroRoutes.ts
+							  |-- Routes.ts
+				|-- controller
+						|-- interfaces
+								|-- ReadController.ts
+								|-- WriteController.ts
+						|-- BaseController.ts
+						|-- HeroController.ts
+				|-- server.ts
+           |-- typings
+           |-- tsconfig.json
+           |-- typings.json
+      gulpfile.ts
+      package.json
+      tsconfig.json
+      tslint.json
+```
+
 ## Features (Angular2, Express, Gulp, MongoDB, Node)
 
 1. Angular 2 Quick Start application (Tours of Hero) from https://angular.io/docs/ts/latest/quickstart.html
