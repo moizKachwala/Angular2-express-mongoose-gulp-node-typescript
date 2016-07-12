@@ -1,4 +1,4 @@
-# Angular2 with Gulp, Typescript, Express Server and MongoDB
+# Angular2 with Gulp, Typescript, Express Server and MongoDB (Repository Pattern)
 
 ##Introduction
 
