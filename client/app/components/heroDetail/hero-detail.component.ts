@@ -14,7 +14,6 @@ import {HeroService} from "../../services/hero.service";
 })
 
 export class HeroDetailComponent implements OnInit {
-    hero: Hero;
     @Input() hero: Hero;
     newHero = false;
     error: any;
