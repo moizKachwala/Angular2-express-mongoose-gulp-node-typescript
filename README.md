@@ -27,11 +27,11 @@ angular2-MEAN
 	│	│	 │		├── heroDetail
 	│	│	 │		│	├── hero-detail.component.css
 	│	│	 │		│	├── hero-detail.component.html
-	│	│	 │		│	├──	hero-detail.component.ts
+	│	│	 │		│	├──	hero-detail.component.ts	
 	│	│	 │		├── heroes
 	│	│	 │		│	├── heroes.component.css
 	│	│	 │		│	├── heroes.component.html
-	│	│	 │		│	├──	heroes.component.ts
+	│	│	 │		│	├──	heroes.component.ts	
 	│	│	 ├── models
 	│	│	 │		├──	hero.ts
 	│	│	 ├── services
