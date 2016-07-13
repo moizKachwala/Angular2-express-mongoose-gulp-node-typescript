@@ -1,3 +1,4 @@
+[![Gitter](https://badges.gitter.im/moizKachwala/Angular2-express-mongo-gulp-node-typescript.svg)](https://gitter.im/moizKachwala/Angular2-express-mongo-gulp-node-typescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Dependency Status](https://david-dm.org/moizkachwala/Angular2-express-mongo-gulp-node-typescript.svg)](https://david-dm.org/moizkachwala/Angular2-express-mongo-gulp-node-typescript)
 [![devDependency Status](https://david-dm.org/moizkachwala/Angular2-express-mongo-gulp-node-typescript/dev-status.svg)](https://david-dm.org/moizkachwala/Angular2-express-mongo-gulp-node-typescript#info=devDependencies)
