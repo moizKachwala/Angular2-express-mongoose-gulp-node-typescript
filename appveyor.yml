@@ -23,6 +23,6 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - npm install -g npm
   - ps: $env:path = $env:appdata + "\npm;" + $env:path
-  - npm install && npm build
+  - npm install && npm run build
 
 cache: node_modules
