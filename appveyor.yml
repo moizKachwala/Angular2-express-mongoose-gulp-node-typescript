@@ -24,5 +24,6 @@ install:
   - npm install -g npm
   - ps: $env:path = $env:appdata + "\npm;" + $env:path
   - npm install && npm install
+  - npm build
 
 cache: node_modules
