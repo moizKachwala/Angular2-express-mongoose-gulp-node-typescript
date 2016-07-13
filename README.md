@@ -1,3 +1,8 @@
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![Dependency Status](https://david-dm.org/moizkachwala/Angular2-express-mongo-gulp-node-typescript.svg)](https://david-dm.org/moizkachwala/Angular2-express-mongo-gulp-node-typescript)
+[![devDependency Status](https://david-dm.org/moizkachwala/Angular2-express-mongo-gulp-node-typescript/dev-status.svg)](https://david-dm.org/moizkachwala/Angular2-express-mongo-gulp-node-typescript#info=devDependencies)
+
+
 # Angular2 with Gulp, Typescript, Express Server and MongoDB (Repository Pattern)
 
 ##Introduction
