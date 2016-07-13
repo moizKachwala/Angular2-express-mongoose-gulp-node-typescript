@@ -5,6 +5,8 @@
 
 # Angular2 with Gulp, Typescript, Express Server and MongoDB (Repository Pattern)
 
+[![Join the chat at https://gitter.im/moizKachwala/Angular2-express-mongo-gulp-node-typescript](https://badges.gitter.im/moizKachwala/Angular2-express-mongo-gulp-node-typescript.svg)](https://gitter.im/moizKachwala/Angular2-express-mongo-gulp-node-typescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ##Introduction
 
 Basic Angular seed application created with Quick start application given on angular website. It uses Express server along with Mongo DB support (Mongoose) via a wrapper of Repository Pattern as Business layer.
