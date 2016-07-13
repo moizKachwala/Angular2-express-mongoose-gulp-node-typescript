@@ -16,82 +16,82 @@ It also uses Gulp for copying our resources.
 
 ```
 angular2-MEAN
-	├── node_modules
-	├── client
-	│	├── app
-	│	│	 ├── Components
-	│	│	 │		├── dashboard
-	│	│	 │		│	├── dashboard.component.css
-	│	│	 │		│	├── dashboard.component.html
-	│	│	 │		│	├──	dashboard.component.ts
-	│	│	 │		├── heroDetail
-	│	│	 │		│	├── hero-detail.component.css
-	│	│	 │		│	├── hero-detail.component.html
-	│	│	 │		│	├──	hero-detail.component.ts	
-	│	│	 │		├── heroes
-	│	│	 │		│	├── heroes.component.css
-	│	│	 │		│	├── heroes.component.html
-	│	│	 │		│	├──	heroes.component.ts	
-	│	│	 ├── models
-	│	│	 │		├──	hero.ts
-	│	│	 ├── services
-	│	│	 │		├──	hero.service.ts						<= Hero Service for fetching api
-	│	│	 ├── app.component.css
-	│	│	 ├── app.component.ts
-	│	│	 ├── app.html
-	│	│	 ├── main.ts
-	│	├── typings
-	│	├── index.html
-	│	├── tsconfig.json
-	│	├── typings.json
-	├── server
-	│	├── src
-	│	│	 ├── app
-	│	│	 │	 ├── business					<= business logic for application
-	│	│	 │	 │		├── common
-	│	│	 │	 │		│	├── Read.ts			<= common Read method
-	│	│	 │	 │		│	├── Write.ts		<= common Write method
-	│	│	 │	 │		├── interfaces
-	│	│	 │	 │		│	├── HeroBusiness.ts
-	│	│	 │	 │		├── BaseBusiness.ts
-	│	│	 │	 │		├── HeroBusiness.ts
-	│	│	 │	 ├── dataAccess
-	│	│	 │	 │		├── schemas
-	│	│	 │	 │		│	├── HeroSchema.ts	<= Hero Schema for MongoDB
-	│	│	 │	 │		├── DataAccess.ts		<= Connection with MongoDB
-	│	│	 │	 ├── model
-	│	│	 │	 │		├── interfaces
-	│	│	 │	 │		│	├── HeroModel.ts
-	│	│	 │	 │		├── HeroModel.ts
-	│	│	 │	 ├── repository
-	│	│	 │	 │		├── interfaces
-	│	│	 │	 │		│	├── Read.ts
-	│	│	 │	 │		│	├── Write.ts
-	│	│	 │	 │		├── BaseRepository.ts
-	│	│	 │	 │		├── HeroRepository.ts
-	│	│	 ├── config
-	│	│	 │	 ├── constants
-	│	│	 │	 │		├── constants.ts		<= Constants - mongodb connection string.
-	│	│	 │	 ├── routes
-	│	│	 │	 │		├── HeroRoutes.ts		<= Hero API Routes like get,post,put,delete
-	│	│	 │	 │		├── Routes.ts			<= fetching all appliction routes here
-	│	│	 ├── controller
-	│	│	 │	 ├── interfaces
-	│	│	 │	 │		├── ReadController.ts
-	│	│	 │	 │		├── WriteController.ts
-	│	│	 │	 ├── BaseController.ts			<= Base Repository controller
-	│	│	 │	 ├── HeroController.ts
-	│	│	 ├── server.ts
-	│	├── typings
-	│	├── tsconfig.json
-	│	├── tsconfig.json
-	├── gulpfile.ts				<= gulp tasks : clean, build, compile, run.
-	├── LICENSE
-	├── package.json
-	├── README.md
-	├── tsconfig.json
-	├── tslint.json
-
+    ├── node_modules
+    ├── client
+    │    ├── app
+    │    │    ├── Components
+    │    │    │    ├── dashboard
+    │    │    │    │    ├── dashboard.component.css
+    │    │    │    │    ├── dashboard.component.html
+    │    │    │    │    ├── dashboard.component.ts
+    │    │    │    ├── heroDetail
+    │    │    │    │    ├── hero-detail.component.css
+    │    │    │    │    ├── hero-detail.component.html
+    │    │    │    │    ├── hero-detail.component.ts    
+    │    │    │    ├── heroes
+    │    │    │    │    ├── heroes.component.css
+    │    │    │    │    ├── heroes.component.html
+    │    │    │    │    ├── heroes.component.ts    
+    │    │    ├── models
+    │    │    │    ├── hero.ts
+    │    │    ├── services
+    │    │    │    ├── hero.service.ts               <= Hero Service for fetching api
+    │    │    ├── app.component.css
+    │    │    ├── app.component.ts
+    │    │    ├── app.html
+    │    │    ├── main.ts
+    │    ├── typings
+    │    ├── index.html
+    │    ├── tsconfig.json
+    │    ├── typings.json
+    ├── server
+    │    ├── src
+    │    │     ├── app
+    │    │     │     ├── business                    <= business logic for application
+    │    │     │     │        ├── common
+    │    │     │     │        │    ├── Read.ts            <= common Read method
+    │    │     │     │        │    ├── Write.ts        <= common Write method
+    │    │     │     │        ├── interfaces
+    │    │     │     │        │    ├── HeroBusiness.ts
+    │    │     │     │        ├── BaseBusiness.ts
+    │    │     │     │        ├── HeroBusiness.ts
+    │    │     │     ├── dataAccess
+    │    │     │     │        ├── schemas
+    │    │     │     │        │    ├── HeroSchema.ts    <= Hero Schema for MongoDB
+    │    │     │     │        ├── DataAccess.ts        <= Connection with MongoDB
+    │    │     │     ├── model
+    │    │     │     │        ├── interfaces
+    │    │     │     │        │    ├── HeroModel.ts
+    │    │     │     │        ├── HeroModel.ts
+    │    │     │     ├── repository
+    │    │     │     │        ├── interfaces
+    │    │     │     │        │    ├── Read.ts
+    │    │     │     │        │    ├── Write.ts
+    │    │     │     │        ├── BaseRepository.ts
+    │    │     │     │        ├── HeroRepository.ts
+    │    │     ├── config
+    │    │     │     ├── constants
+    │    │     │     │        ├── constants.ts        <= Constants - mongodb connection string.
+    │    │     │     ├── routes
+    │    │     │     │        ├── HeroRoutes.ts        <= Hero API Routes like get,post,put,delete
+    │    │     │     │        ├── Routes.ts            <= fetching all appliction routes here
+    │    │     ├── controller
+    │    │     │     ├── interfaces
+    │    │     │     │        ├── ReadController.ts
+    │    │     │     │        ├── WriteController.ts
+    │    │     │     ├── BaseController.ts            <= Base Repository controller
+    │    │     │     ├── HeroController.ts
+    │    │     ├── server.ts
+    │    ├── typings
+    │    ├── tsconfig.json
+    │    ├── tsconfig.json
+    ├── gulpfile.ts                <= gulp tasks : clean, build, compile, run.
+    ├── LICENSE
+    ├── package.json
+    ├── README.md
+    ├── tsconfig.json
+    ├── tslint.json
+    
 ```
 
 ## Features (Angular2, Express, Gulp, MongoDB, Node)
