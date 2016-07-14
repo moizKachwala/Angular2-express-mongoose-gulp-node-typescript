@@ -120,12 +120,14 @@ angular2-MEAN
 
 ## Api Document (from MongoDB)
 
+```
 1. getAll    http://localhost:3000/api/heroes             <= get all heroes
 1. getById   http://localhost:3000/api/heroes/:id         <= get hero by Id
 2. post      http://localhost:3000/api/heroes             <= create hero
 2. put       http://localhost:3000/api/heroes/:id         <= update hero
 2. delete    http://localhost:3000/api/heroes/:id         <= delete hero
 
+```
 ## Dependencies
 
 1. Angular 2
