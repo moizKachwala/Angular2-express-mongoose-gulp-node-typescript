@@ -8,9 +8,7 @@
     "compile": "gulp compile",
     "build": "gulp build",
     "start": "concurrent --kill-others \"gulp watch\" \"gulp start\"",
-    "postinstall": "gulp installTypings && gulp build",
-    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
-    "heroku-postbuild": "echo This runs afterwards."
+    "postinstall": "gulp installTypings"
   },
   "keywords": [
     "Angular2",
