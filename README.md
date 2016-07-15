@@ -107,16 +107,16 @@ angular2-MEAN
 
 ## Features (Angular2, Express, Gulp, MongoDB, Node)
 
-1. Angular 2 Quick Start application (Tours of Hero) from https://angular.io/docs/ts/latest/quickstart.html
-2. Added support for Gulp so that js files are moved out of the app folder.
-3. It will create a dist folder where it will place all the js files.
-4. Gulp will monitor for the changes via help of watcher.
-5. Created folder structure for easy access of components, services and models.
-6. Applied tslint for avoiding any typos.
-7. Implemented best practices recomended on the Angular 2 website.
-8. Implemented Express Server to Host API's
-9. Added MongoDB support to communicate our Heroes data to Database
-10.Implemented Repository Pattern to communicate with Mongoose.
+1.  Angular 2 Quick Start application (Tours of Hero) from https://angular.io/docs/ts/latest/quickstart.html
+2.  Added support for Gulp so that js files are moved out of the app folder.
+3.  It will create a dist folder where it will place all the js files.
+4.  Gulp will monitor for the changes via help of watcher.
+5.  Created folder structure for easy access of components, services and models.
+6.  Applied tslint for avoiding any typos.
+7.  Implemented best practices recomended on the Angular 2 website.
+8.  Implemented Express Server to Host API's
+9.  Added MongoDB support to communicate our Heroes data to Database
+10. Implemented Repository Pattern to communicate with Mongoose.
 
 ## Api Document (from MongoDB)
 
