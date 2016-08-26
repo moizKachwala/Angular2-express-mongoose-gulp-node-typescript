@@ -11,5 +11,8 @@
   },
   "exclude": [
     "typings"
+  ],
+  "types": [
+      "core-js"
   ]
 }
