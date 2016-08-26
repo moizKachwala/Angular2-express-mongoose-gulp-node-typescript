@@ -24,6 +24,12 @@ It also uses Gulp for running task and TsLint.The seed application is built over
     npm run start        <= start the Nodemon and watch for changes.
 ```
 
+## Global packages
+```
+    npm install ts-node -g
+    npm install typescript-node -g
+```
+
 ## Directory Structure
 
 ```
