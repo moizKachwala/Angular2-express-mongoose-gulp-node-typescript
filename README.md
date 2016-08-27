@@ -1,3 +1,4 @@
+## [ Angular2 Updated to RC5 ]
 # Angular2 MEAN - QuickStart application with ExpressJS, MongoDB, Gulp and Typescript (Repository Pattern)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/y7cp312hef8sju0w/branch/master?svg=true)](https://ci.appveyor.com/project/moizKachwala/angular2-express-mongo-gulp-node-typescript/branch/master)
@@ -18,9 +19,15 @@ It also uses Gulp for running task and TsLint.The seed application is built over
 
 ## Steps to Run
 ```sh
-    npm install      <= install all the npm Dependencies
-    npm build        <= build client and server application.
-    npm start        <= start the Nodemon and watch for changes.
+    npm install          <= install all the npm Dependencies
+    npm run build        <= build client and server application.
+    npm run start        <= start the Nodemon and watch for changes.
+```
+
+## Global packages
+```
+    npm install ts-node -g
+    npm install typescript-node -g
 ```
 
 ## Directory Structure
@@ -50,9 +57,12 @@ angular2-MEAN
     │    │    ├── app.component.css
     │    │    ├── app.component.ts
     │    │    ├── app.html
+    │    │    ├── app.module.ts
+    │    │    ├── app.routing.ts
     │    │    ├── main.ts
     │    ├── typings
     │    ├── index.html
+    │    │    ├── systemjs.config.js
     │    ├── tsconfig.json
     │    ├── typings.json
     ├── server
@@ -142,4 +152,3 @@ angular2-MEAN
 ## License
 
 MIT
-
