@@ -57,9 +57,12 @@ angular2-MEAN
     │    │    ├── app.component.css
     │    │    ├── app.component.ts
     │    │    ├── app.html
+    │    │    ├── app.module.ts
+    │    │    ├── app.routing.ts
     │    │    ├── main.ts
     │    ├── typings
     │    ├── index.html
+    │    │    ├── systemjs.config.js
     │    ├── tsconfig.json
     │    ├── typings.json
     ├── server
