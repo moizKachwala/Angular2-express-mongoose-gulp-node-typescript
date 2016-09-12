@@ -77,6 +77,14 @@ gulp.task("clientResources", () => {
 });
 
 /**
+ * Copy bin directory for www
+ */
+gulp.task("serverResources", () => {
+    return gulp.src(["server/src/bin/**"])
+        .pipe(gulp.dest("dist/server/bin"));
+});
+
+/**
  * Copy all required libraries into build directory.
  */
 gulp.task("libs", () => {
@@ -103,7 +111,7 @@ gulp.task("installTypings",function(){
  * Start the express server with nodemon
  */
 gulp.task('start', function () {
-    nodemon({ script: 'dist/server/server.js'
+    nodemon({ script: 'dist/server/bin/www'
         , ext: 'html js'
         , ignore: ['ignored.js']
         , tasks: ['tslint'] })
@@ -122,7 +130,7 @@ gulp.task('start', function () {
  */
 
 gulp.task("build", function (callback) {
-    runSequence('clean', 'build:server', 'build:client', 'clientResources', 'libs', callback);
+    runSequence('clean', 'build:server', 'build:client', 'clientResources','serverResources', 'libs', callback);
 });
 
 /**
@@ -150,11 +158,9 @@ gulp.task('watch', function () {
  */
 
 gulp.task("build", function (callback) {
-    runSequence('clean', 'build:server', 'build:client', 'clientResources', 'libs', callback);
+    runSequence('clean', 'build:server', 'build:client', 'clientResources','serverResources', 'libs', callback);
 });
 
-
 gulp.task('default', function() {
-    runSequence( 'build:server', 'build:client', 'clientResources', 'libs','watch','start');
-
+    runSequence( 'build:server', 'build:client', 'clientResources','serverResources', 'libs','watch','start');
 });
