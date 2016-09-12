@@ -1,6 +1,27 @@
-<h1>{{title}}</h1>
-<nav>
-    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-    <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
-</nav>
-<router-outlet></router-outlet>
+<header class="site-header" role="banner">
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                     <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+          </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"> <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+                        </li>
+                        <li class="active"><a routerLink="/heroes" routerLinkActive="active">Heroes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <h1>{{title}}</h1>
+    <router-outlet></router-outlet>
+</div>

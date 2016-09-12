@@ -36,7 +36,7 @@ gulp.task('build:server', function () {
         .pipe(gulp.dest('dist/server'))
 });
 
-gulp.task('build:client', function(){
+gulp.task('build:client', function () {
     var tsProject = tsc.createProject('client/tsconfig.json');
     var tsResult = gulp.src('client/**/*.ts')
         .pipe(sourcemaps.init())
@@ -72,7 +72,7 @@ gulp.task("compile", ["tslint"], () => {
  * Copy all resources that are not TypeScript files into build directory. e.g. index.html, css, images
  */
 gulp.task("clientResources", () => {
-    return gulp.src(["client/**/*", "!**/*.ts","!client/typings", "!client/typings/**","!client/*.json"])
+    return gulp.src(["client/**/*", "!**/*.ts", "!client/typings", "!client/typings/**", "!client/*.json"])
         .pipe(gulp.dest("dist/client"));
 });
 
@@ -89,20 +89,31 @@ gulp.task("serverResources", () => {
  */
 gulp.task("libs", () => {
     return gulp.src([
-        'core-js/client/shim.min.js',
+        'core-js/client/**',
         'zone.js/dist/zone.js',
         'reflect-metadata/Reflect.js',
+        'reflect-metadata/Reflect.js.map',
         'systemjs/dist/system.src.js'
-    ], {cwd: "node_modules/**"}) /* Glob required here. */
+    ], { cwd: "node_modules/**" }) /* Glob required here. */
         .pipe(gulp.dest("dist/client/libs"));
+});
+
+/**
+ * Copy all required libraries into build directory.
+ */
+gulp.task("css", () => {
+    return gulp.src([
+        'bootstrap/dist/**/**'
+    ], { cwd: "node_modules/**" }) /* Glob required here. */
+        .pipe(gulp.dest("dist/client/css"));
 });
 
 
 /**
  * Install typings for server and client.
  */
-gulp.task("installTypings",function(){
-    var stream = gulp.src(["./server/typings.json","./client/typings.json"])
+gulp.task("installTypings", function () {
+    var stream = gulp.src(["./server/typings.json", "./client/typings.json"])
         .pipe(gulpTypings(null)); //will install all typingsfiles in pipeline.
     return stream; // by returning stream gulp can listen to events from the stream and knows when it is finished.
 });
@@ -111,10 +122,12 @@ gulp.task("installTypings",function(){
  * Start the express server with nodemon
  */
 gulp.task('start', function () {
-    nodemon({ script: 'dist/server/bin/www'
+    nodemon({
+        script: 'dist/server/bin/www'
         , ext: 'html js'
         , ignore: ['ignored.js']
-        , tasks: ['tslint'] })
+        , tasks: ['tslint']
+    })
         .on('restart', function () {
             console.log('restarted!')
         });
@@ -130,7 +143,7 @@ gulp.task('start', function () {
  */
 
 gulp.task("build", function (callback) {
-    runSequence('clean', 'build:server', 'build:client', 'clientResources','serverResources', 'libs', callback);
+    runSequence('clean', 'build:server', 'build:client', 'clientResources', 'serverResources', 'libs', 'css', callback);
 });
 
 /**
@@ -158,9 +171,9 @@ gulp.task('watch', function () {
  */
 
 gulp.task("build", function (callback) {
-    runSequence('clean', 'build:server', 'build:client', 'clientResources','serverResources', 'libs', callback);
+    runSequence('clean', 'build:server', 'build:client', 'clientResources', 'serverResources', 'libs', 'css', callback);
 });
 
-gulp.task('default', function() {
-    runSequence( 'build:server', 'build:client', 'clientResources','serverResources', 'libs','watch','start');
+gulp.task('default', function () {
+    runSequence('build:server', 'build:client', 'clientResources', 'serverResources', 'libs', 'css', 'watch', 'start');
 });
