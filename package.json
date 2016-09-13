@@ -6,8 +6,8 @@
     "clean": "gulp clean",
     "compile": "gulp compile",
     "build": "gulp build",
-    "start": "concurrent --kill-others \"gulp watch\" \"gulp start\"",
-    "postinstall": "gulp installTypings",
+    "deploy": "concurrent --kill-others \"gulp watch\" \"gulp start\"",
+    "postinstall": "gulp installTypings && gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
