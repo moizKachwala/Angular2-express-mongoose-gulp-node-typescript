@@ -12,6 +12,8 @@
 Basic Angular seed application created with Quick start application (Tour of Heroes) given on angular website. It uses ExpressJS along with Mongo DB support (Mongoose) via a wrapper of Repository Pattern as Business layer.
 It also uses Gulp for running task and TsLint.The seed application is built over node and uses latest node packages.
 
+## [https://angular2-express-mongoose.herokuapp.com/](https://angular2-express-mongoose.herokuapp.com/)
+
 ## Prerequisites
 
 1. Latest version of Node to be installed.
@@ -20,7 +22,8 @@ It also uses Gulp for running task and TsLint.The seed application is built over
 ## Steps to Run
 ```sh
     npm install          <= install all the npm Dependencies
-    npm run deploy        <= start the Nodemon and watch for changes.
+    npm run build        <= build and compile the dest folder
+    npm run deploy       <= start the Nodemon and watch for changes.
 ```
 
 ## Global packages
