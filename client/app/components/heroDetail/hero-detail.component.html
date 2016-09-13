@@ -1,18 +1,35 @@
-<div *ngIf="hero">
+<div *ngIf="hero" class="form-horizontal">
     <h2>{{hero.name}} details!</h2>
-    <div *ngIf="!newHero"><label>id: </label>{{hero._id}}</div>
-    <div>
-        <label>Name: </label>
-        <input [(ngModel)]="hero.name" placeholder="name"/>
+    <div class="form-group">
+        <div *ngIf="!newHero">
+            <label class="col-sm-2 control-label">id: </label>
+            <div class="col-sm-10">
+                {{hero._id}}
+            </div>
+        </div>
     </div>
-    <div>
-        <label>Power: </label>
-        <input [(ngModel)]="hero.power" placeholder="power"/>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Name: </label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="hero.name" placeholder="name" />
+        </div>
     </div>
-    <div>
-        <label>Amount People Saved: </label>
-        <input [(ngModel)]="hero.amountPeopleSaved" placeholder="amountPeopleSaved"/>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Power: </label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="hero.power" placeholder="power" />
+        </div>
     </div>
-    <button (click)="goBack()">Back</button>
-    <button (click)="save()">Save</button>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Amount People Saved: </label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="hero.amountPeopleSaved" placeholder="amountPeopleSaved" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button (click)="goBack()" class="btn btn-default">Back</button>
+            <button (click)="save()" class="btn btn-primary">Save</button>
+        </div>
+    </div>
 </div>

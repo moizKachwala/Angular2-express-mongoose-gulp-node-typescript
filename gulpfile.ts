@@ -153,9 +153,11 @@ gulp.task('watch', function () {
     gulp.watch(["client/**/*.ts"], ['compile']).on('change', function (e) {
         console.log('TypeScript file ' + e.path + ' has been changed. Compiling.');
     });
+
     gulp.watch(["client/**/*.html", "client/**/*.css"], ['clientResources']).on('change', function (e) {
         console.log('Resource file ' + e.path + ' has been changed. Updating.');
     });
+    
     gulp.watch(["server/src/**/*.ts"], ['compile']).on('change', function (e) {
         console.log('TypeScript file ' + e.path + ' has been changed. Compiling.');
     });

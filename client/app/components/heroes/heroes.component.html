@@ -1,19 +1,40 @@
 <h1>{{title}}</h1>
 <h2>My Heroes</h2>
-<div class="error" *ngIf="error">{{error}}</div>
-<button class="buttonCls topButton" (click)="addHero()">Add New Hero</button>
-<ul class="heroes">
-    <li *ngFor="let hero of heroes"  [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
-     <span class="hero-element">
-       <span class="badge">{{hero._id}}</span> {{hero.name}}
-     </span>
-        <button class="delete-button" (click)="deleteHero(hero, $event)">Delete</button>
-    </li>
-</ul>
-
-<div *ngIf="selectedHero">
-    <h2>
-        {{selectedHero.name | uppercase}} is my hero
-    </h2>
-    <button class="buttonCls" (click)="gotoDetail()">View Details</button>
+<div class="row">
+    <div class="col-md-12">
+        <div class="error" *ngIf="error">{{error}}</div>
+        <div class="pull-right">
+            <button class="btn btn-success" (click)="addHero()">Add New Hero</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Object Id</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let hero of heroes" [class.active]="hero === selectedHero" (click)="onSelect(hero)">
+                    <td>{{hero._id}}</td>
+                    <td>{{hero.name}}</td>
+                    <td><button class="btn btn-danger" (click)="deleteHero(hero, $event)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div *ngIf="selectedHero">
+            <h2>
+                {{selectedHero.name | uppercase}} is my hero
+            </h2>
+            <button class="btn btn-primary" (click)="gotoDetail()">View Details</button>
+        </div>
+    </div>
 </div>
