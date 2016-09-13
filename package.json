@@ -45,19 +45,19 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "mongoose": "^4.5.0",
-    "bootstrap": "^3.3.6"
-  },
-  "devDependencies": {
-    "@types/core-js": "^0.9.32",
-    "concurrently": "^2.1.0",
-    "del": "^2.2.0",
+    "bootstrap": "^3.3.6",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-nodemon": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tslint": "^4.3.3",
     "gulp-typescript": "^2.13.6",
-    "gulp-typings": "^2.0.0",
+    "gulp-typings": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.32",
+    "concurrently": "^2.1.0",
+    "del": "^2.2.0",   
     "method-override": "^2.3.6",
     "run-sequence": "^1.2.1",
     "tslint": "^3.5.0",
