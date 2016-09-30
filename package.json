@@ -6,7 +6,7 @@
     "clean": "gulp clean",
     "compile": "gulp compile",
     "build": "gulp build",
-    "deploy": "concurrent --kill-others \"gulp watch\" \"gulp start\"",
+    "deploy": "concurrent --kill-others \"gulp watch\" \"node ./dist/server/bin/www",
     "postinstall": "gulp installTypings"
   },
   "repository": {
