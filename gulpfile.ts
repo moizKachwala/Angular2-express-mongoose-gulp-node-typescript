@@ -30,20 +30,20 @@ gulp.task('build:server', function () {
     var tsProject = tsc.createProject('server/tsconfig.json');
     var tsResult = gulp.src('server/src/**/*.ts')
         .pipe(sourcemaps.init())
-        .pipe(tsc(tsProject))
+        .pipe(tsProject());
     return tsResult.js
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dist/server'))
+        .pipe(gulp.dest('dist/server'));
 });
 
 gulp.task('build:client', function () {
     var tsProject = tsc.createProject('client/tsconfig.json');
     var tsResult = gulp.src('client/**/*.ts')
         .pipe(sourcemaps.init())
-        .pipe(tsc(tsProject))
+        .pipe(tsProject());
     return tsResult.js
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dist/client'))
+        .pipe(gulp.dest('dist/client'));
 });
 
 /**
@@ -62,7 +62,7 @@ gulp.task('tslint', () => {
 gulp.task("compile", ["tslint"], () => {
     let tsResult = gulp.src("client/**/*.ts")
         .pipe(sourcemaps.init())
-        .pipe(tsc(tsProject));
+        .pipe(tsProject());
     return tsResult.js
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("dist/client"));
@@ -129,7 +129,7 @@ gulp.task('start', function () {
         , tasks: ['tslint']
     })
         .on('restart', function () {
-            console.log('restarted!')
+            console.log('restarted!');
         });
 });
 
@@ -157,7 +157,7 @@ gulp.task('watch', function () {
     gulp.watch(["client/**/*.html", "client/**/*.css"], ['clientResources']).on('change', function (e) {
         console.log('Resource file ' + e.path + ' has been changed. Updating.');
     });
-    
+
     gulp.watch(["server/src/**/*.ts"], ['compile']).on('change', function (e) {
         console.log('TypeScript file ' + e.path + ' has been changed. Compiling.');
     });
