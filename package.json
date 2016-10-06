@@ -47,7 +47,6 @@
     "zone.js": "^0.6.25"
   },
   "devDependencies": {
-    "@types/core-js": "^0.9.34",
     "concurrently": "^3.0.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
