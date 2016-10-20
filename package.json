@@ -6,7 +6,7 @@
     "clean": "gulp clean",
     "compile": "gulp compile",
     "build": "gulp build",
-    "deploy": "concurrent --kill-others \"gulp watch\" \"node ./dist/server/bin/www",
+    "deploy": "concurrently --kill-others \"gulp watch\" \"node ./dist/server/bin/www\"",
     "postinstall": "gulp installTypings"
   },
   "repository": {
@@ -39,7 +39,7 @@
     "express": "^4.14.0",
     "mongoose": "^4.6.1",
     "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.0-beta.12",
+    "rxjs": "5.0.0-rc.1",
     "systemjs": "0.19.39",
     "zone.js": "^0.6.25"
   },
