@@ -1,4 +1,4 @@
-## [ Angular2 Updated to 2.2.3 ]
+## [ Angular2 Updated to 2.4.1 ]
 # Angular2 MEAN - QuickStart application with ExpressJS, MongoDB, Gulp and Typescript (Repository Pattern)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/y7cp312hef8sju0w/branch/master?svg=true)](https://ci.appveyor.com/project/moizKachwala/angular2-express-mongo-gulp-node-typescript/branch/master)
