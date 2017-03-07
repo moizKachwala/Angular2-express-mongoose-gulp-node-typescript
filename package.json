@@ -33,7 +33,7 @@
     "@angular/router": "~3.4.9",
     "@angular/upgrade": "~2.4.9",
 
-    "body-parser": "1.17.0",
+    "body-parser": "1.17.1",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "express": "^4.15.2",
