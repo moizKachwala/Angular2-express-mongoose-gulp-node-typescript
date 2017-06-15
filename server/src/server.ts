@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import express = require('express');
 import BaseRoutes = require("./config/routes/Routes");
 import bodyParser = require("body-parser");
@@ -29,7 +27,7 @@ var renderIndex = (req: express.Request, res: express.Response) => {
 app.get('/*', renderIndex);
 
 if(env === 'developement'){
-    app.use(function(err, req: express.Request, res: express.Response, next: express.NextFunction) {
+    app.use(function(err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
         res.status(err.status || 500);
         res.json({
             error: err,
