@@ -13,8 +13,7 @@ const gulp = require("gulp"),
     tslint = require('gulp-tslint'),
     concat = require('gulp-concat'),
     runSequence = require('run-sequence'),
-    nodemon = require('gulp-nodemon'),
-    gulpTypings = require("gulp-typings");
+    nodemon = require('gulp-nodemon');
 
 /**
  * Remove build directory.
@@ -74,7 +73,7 @@ gulp.task("compile", ["tslint"], () => {
  * Copy all resources that are not TypeScript files into build directory. e.g. index.html, css, images
  */
 gulp.task("clientResources", () => {
-    return gulp.src(["client/**/*", "!**/*.ts", "!client/typings", "!client/typings/**", "!client/*.json"])
+    return gulp.src(["client/**/*", "!**/*.ts", "!client/*.json"])
         .pipe(gulp.dest("dist/client"));
 });
 
@@ -108,16 +107,6 @@ gulp.task("css", () => {
         'bootstrap/dist/**/**'
     ], { cwd: "node_modules/**" }) /* Glob required here. */
         .pipe(gulp.dest("dist/client/css"));
-});
-
-
-/**
- * Install typings for server and client.
- */
-gulp.task("installTypings", function () {
-    var stream = gulp.src(["./server/typings.json", "./client/typings.json"])
-        .pipe(gulpTypings(null)); //will install all typingsfiles in pipeline.
-    return stream; // by returning stream gulp can listen to events from the stream and knows when it is finished.
 });
 
 /**
